@@ -31,6 +31,10 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        redTextField.delegate = self
+        greenTextField.delegate = self
+        blueTextField.delegate = self        
+        
         colorView.layer.borderWidth = 0.3
         colorView.layer.borderColor = UIColor.gray.cgColor
         colorView.backgroundColor = currentColor
@@ -38,11 +42,6 @@ class SettingsViewController: UIViewController {
         setSliders()
         setLabelsValue(for: redLabel, greenLabel, blueLabel)
         setTextFieldsValue(for: redTextField, greenTextField, blueTextField)
-        
-        redTextField.delegate = self
-        greenTextField.delegate = self
-        blueTextField.delegate = self
-        
     }
     
     // MARK: - IB Actions
